@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {createHashRouter, NavLink, RouterProvider} from "react-router-dom";
+import {Home} from "./pages/Home";
+import {Root} from "./pages/Root";
+import {About} from "./pages/About";
+import {District} from "./pages/District";
+import {Issues} from "./pages/Issues";
+
+const router = createHashRouter([
+	{
+		path: "/",
+		element: <Root />,
+		errorElement: <div className={"flex flex-col w-full h-full items-center justify-center gap-3"}>Page Not Found<NavLink className={"text-blue-600"} to={"/"}>Go Back Home</NavLink></div>,
+			children: [
+				{
+					path: "",
+					element: <Home />,
+				},
+				{
+					path: "about",
+					element: <About />,
+				},
+				{
+					path: "issues",
+					element: <Issues />,
+				},
+				{
+					path: "district",
+					element: <District />,
+				},
+			],
+		},
+	]
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+	  <RouterProvider router={router} />
   );
 }
 

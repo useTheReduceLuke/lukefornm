@@ -1,3 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Raleway';
+	src: local('Raleway'), url(./fonts/Raleway/Raleway-VariableFont_wght.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +20,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+	box-sizing: border-box;
+}
+
+body, html, #root {
+	width: 100%;
+	height: 100%;
+	font-family: Raleway, serif;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+}
+
+.leaflet-container { height: 180px; }
+
+.Instagram-Icon span {
+	transition: 0.2s ease;
+	background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+	opacity: 0;
+}
+
+.Instagram-Icon:hover span {
+	opacity: 1;
+}
+.Instagram-Icon:hover a {
+	color: white;
+}
+
