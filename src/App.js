@@ -6,6 +6,7 @@ import {Root} from "./pages/Root";
 import {About} from "./pages/About";
 import {District} from "./pages/District";
 import {Issues} from "./pages/Issues";
+import {Contact} from "./pages/Contact";
 
 const router = createHashRouter([
 	{
@@ -28,6 +29,10 @@ const router = createHashRouter([
 				{
 					path: "district",
 					element: <District />,
+				},
+				{
+					path: "contact",
+					element: <Contact />,
 				},
 			],
 		},
