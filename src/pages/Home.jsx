@@ -23,13 +23,13 @@ export const Home = () => {
 						<img className={"min-w-[360px] w-full md:w-[800px] p-4 md:p-12"} src={"/FinalLogo.png"}/>
 						<span className={"flex flex-col-reverse md:flex-row items-end relative w-full"}>
 							<p className={"pl-8 text-black text-xl md:text-3xl pb-4 md:pb-16 md:py-24 flex-1 z-10"}>
-								Luke is a Software Engineer and Native-Born New Mexican running as a Democrat for the <b>New Mexico House District 60 in 2024</b> with the goals of:
+								Luke Jungmann is a Software Engineer and Native-Born New Mexican running as a Democrat for <b>New Mexico House District 60 in 2024</b> with the goals of:
 							</p>
 							<ProgressiveImage
 								className={"flex-1 h-max w-full md:w-1/2 -scale-x-100 pointer-events-none"}
 								src={"images/Luke-3214-med-res.png"}
 								placeholderSrc={"images/Luke-3214-low-res.png"}
-								alt="Luke Jungmann"/>
+								alt=""/>
 						</span>
 					</div>
 				</ProgressiveImage>
@@ -50,13 +50,14 @@ export const Home = () => {
 									</li>
 								</ul>
 								<NavLink
-									className={"border-b-2 pt-8 border-b-white/50 hover:border-b-white transition-colors max-w-max text-2xl text-sky-200/90 hover:text-white"}
+									className={"border-b-2 pt-8 border-b-white/50 hover:border-b-white transition-colors max-w-max text-2xl text-sky-200 hover:text-white"}
 									to={"/issues"}>And many more!</NavLink>
 								<span className={"h-16 mt-24 flex flex-col items-center"}>
 									Endorsed by:
 									<span className={"flex"}>
 										<img className={"h-16 mt-8"}
-									        src={"/images/314EndorsementLogo.png"}/>
+									        src={"/images/314EndorsementLogo.png"}
+											alt="NM House Seat 60 Endorsement"/>
 									</span>
 								</span>
 							</div>
