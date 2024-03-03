@@ -68,7 +68,6 @@ const FloatingListScrollBar = (props) => {
 
 	const makeBarHeightStyle = () => {
 		const barHeight = Math.round(clientHeight / scrollHeight * floatingListHeight);
-		console.log(clientHeight, scrollHeight, floatingListHeight);
 		if (!isNaN(barHeight)) {
 			const heightStyle = Object.assign({}, barStyle);
 			heightStyle.height = `${barHeight}px`;

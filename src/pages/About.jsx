@@ -1,13 +1,12 @@
 import {DoubleBackground} from "../components/DoubleBackground";
-import cn from "classnames";
 
-import Abq1 from "../assets/abq-1.jpg";
+import Abq1 from "../assets/abq-1-md.jpg";
 import Abq1Sm from "../assets/abq-1-sm.jpg";
-import Abq2 from "../assets/abq-2.jpg";
+import Abq2 from "../assets/abq-2-md.jpg";
 import Abq2Sm from "../assets/abq-2-sm.jpg";
-import Drone from "../assets/drone.jpg";
+import Drone from "../assets/drone-md.jpg";
 import DroneSm from "../assets/drone-sm.jpg";
-import VLA from "../assets/vla.jpg";
+import VLA from "../assets/vla-md.jpg";
 import VLASm from "../assets/vla-sm.jpg";
 import {BlockText} from "../components/BlockText";
 import ProgressiveImage from "../components/ProgressiveBGImage/ProgressiveImage";
@@ -58,7 +57,7 @@ export const About = () => {
 		<ScrollManager className={"flex flex-col relative"}>
 			{
 				aboutList.map(({imageSrc, imageSrcSm, code}, index) =>
-					(<DoubleBackground key={`about-${index}`} imageSrc={imageSrc} imageSrcSm={imageSrcSm} upperBg={"from-black/40 to-black/80"}>
+					(<DoubleBackground key={`about-${index}`} imageSrc={imageSrc} imageSrcSm={imageSrcSm} upperBg={"from-black/40 to-black/80 backdrop-blur-sm"}>
 						<BlockText>
 							<div className={"inline-flex flex-col justify-center items-start min-h-[90vh] md:min-h-[95vh]"}>
 								{code}

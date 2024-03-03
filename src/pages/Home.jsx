@@ -1,10 +1,7 @@
 
-import { isMobile } from 'react-device-detect';
 import { NavLink } from "react-router-dom";
-import Abq1 from "../assets/abq-1.jpg";
 import Abq1Md from "../assets/abq-1-md.jpg";
 import Abq1Sm from "../assets/abq-1-sm.jpg";
-import Abq2 from "../assets/abq-2.jpg";
 import Abq2Md from "../assets/abq-2-md.jpg";
 import Abq2Sm from "../assets/abq-2-sm.jpg";
 import {DoubleBackground} from "../components/DoubleBackground";
@@ -17,7 +14,7 @@ export const Home = () => {
 	return (
 		<ScrollManager>
 			<div className={"flex flex-1 flex-col items-start w-full"}>
-				<ProgressiveImage src={isMobile ? Abq2Md : Abq2} placeholder={Abq2Sm}>
+				<ProgressiveImage src={Abq2Md} placeholder={Abq2Sm}>
 					<div
 						className={"flex flex-col items-center justify-between w-full border-b border-black/50 bg-gradient-to-b from-blue-50/60 to-blue-50 min-h-[90vh] md:min-h-[95vh]"}>
 						<img className={"min-w-[360px] w-full md:w-[800px] p-4 md:p-12"} src={"/FinalLogo.png"}/>
@@ -35,7 +32,7 @@ export const Home = () => {
 				</ProgressiveImage>
 				<div className={"flex flex-col w-full items-start"}>
 					<DoubleBackground upperBg={"from-black/50 to-black/70"}
-					                  imageSrc={isMobile ? Abq1Md : Abq1}
+					                  imageSrc={Abq1Md}
 					                  imageSrcSm={Abq1Sm}>
 						<BlockText>
 							<div
