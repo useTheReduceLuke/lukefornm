@@ -1,7 +1,5 @@
 
 import MailChimp from "../components/MailChimp";
-import { isMobile } from 'react-device-detect';
-import Abq1 from "../assets/abq-1.jpg";
 import Abq1Md from "../assets/abq-1-md.jpg";
 import Abq1Sm from "../assets/abq-1-sm.jpg";
 import ProgressiveImage from "react-progressive-bg-image";
@@ -25,7 +23,7 @@ const ContactUs = () => {
 export const Contact = () => {
 	return (
 		<div className={"flex flex-1 flex-col items-start w-full h-full"}>
-			<ProgressiveImage className={"w-full h-full bg-cover"} src={isMobile ? Abq1Md : Abq1} placeholder={Abq1Sm}>
+			<ProgressiveImage className={"w-full h-full bg-cover"} src={Abq1Md} placeholder={Abq1Sm}>
 				<div className={"inline-flex text-white flex-col justify-center items-center p-8 h-full w-full"}>
 					<BlockText className={"mt-8 md:mt-24 pb-2 text-3xl font-bold"}>Contact Us:</BlockText>
 					<ContactUs/>

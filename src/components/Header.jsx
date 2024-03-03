@@ -33,14 +33,14 @@ export const Header = () => {
 
 	return (
 		<div
-			className={cn("h-max z-[100] lg:h-24 flex flex-col-reverse lg:flex-row w-full gap-3 justify-evenly px-4 py-2 text-xl items-center overflow-hidden border-b")}>
-			<div className={"flex w-full lg:w-max lg:gap-4 flex-row justify-evenly items-center"}>
+			className={cn("z-[100] h-[112px] lg:h-[96px] flex flex-col-reverse lg:flex-row w-full gap-3 justify-evenly px-2 md:px-4 py-1 md:py-2 text-xl items-center overflow-hidden border-b")}>
+			<div className={"flex w-full lg:gap-4 flex-row justify-evenly items-center flex-1"}>
 				{
 					routes.map(route => {
 						return <NavLink
 							key={'link-to-' + route.text}
 							to={route.url}
-							className={cn("w-min min-w-max px-2 cursor-pointer transition-colors hover:text-black font-bold sm:font-normal text-sm sm:text-xl", (location.pathname === route.url) ? "text-black" : "text-black/50")}>
+							className={cn("w-min min-w-max p-2 cursor-pointer transition-colors hover:text-black font-bold sm:font-normal text-sm sm:text-xl", (location.pathname === route.url) ? "text-black" : "text-black/50")}>
 							{route.text}
 						</NavLink>
 					})
@@ -49,9 +49,9 @@ export const Header = () => {
 				{/*	Events*/}
 				{/*</a>*/}
 			</div>
-			<div className={"flex items-center justify-between flex-row w-full lg:w-max gap-1 lg:gap-8"}>
+			<div className={"flex items-center justify-between flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
 				<Donate/>
-				<span className={"flex flex-1"}>
+				<span className={"flex"}>
 					<img className={"p-0 transition-all object-contain h-8 lg:h-12"}
 				     src={"/FinalLogo.png"}/>
 				</span>

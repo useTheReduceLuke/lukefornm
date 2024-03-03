@@ -57,8 +57,8 @@ export const About = () => {
 	return (
 		<ScrollManager className={"flex flex-col relative"}>
 			{
-				aboutList.map(({imageSrc, imageSrcSm, code}) =>
-					(<DoubleBackground imageSrc={imageSrc} imageSrcSm={imageSrcSm} upperBg={"from-black/40 to-black/80"}>
+				aboutList.map(({imageSrc, imageSrcSm, code}, index) =>
+					(<DoubleBackground key={`about-${index}`} imageSrc={imageSrc} imageSrcSm={imageSrcSm} upperBg={"from-black/40 to-black/80"}>
 						<BlockText>
 							<div className={"inline-flex flex-col justify-center items-start min-h-[90vh] md:min-h-[95vh]"}>
 								{code}
