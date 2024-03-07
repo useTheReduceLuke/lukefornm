@@ -3,6 +3,13 @@ import {useLocation} from "react-router-dom";
 import classNames from "classnames";
 import cn from "classnames";
 
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
+
 const useWindowSize = () => {
 	const [size, setSize] = useState([0, 0]);
 	useLayoutEffect(() => {
@@ -43,6 +50,8 @@ const FloatingListScrollBar = (props) => {
 
 	const {scroll = 0, scrollHeight = 1080, clientHeight = 900, floatingListHeight} = props;
 
+	const [percentage, setPercentage] = useState(0);
+
 	const [barStyle, setBarStyle] = useState({
 		top: `0%`,
 		height: `0px`
@@ -58,8 +67,9 @@ const FloatingListScrollBar = (props) => {
 	}, [floatingListHeight]);
 
 	const makeBarTopStyle = () => {
-		const percentage = Math.round((scroll / (scrollHeight)) * 100) ?? 0;
-		if (!isNaN(percentage)) {
+		const calcPercent = (scroll / (scrollHeight) * 100).toFixed(3) ?? 0;
+		if (!isNaN(percentage) && calcPercent !== percentage) {
+			setPercentage(calcPercent);
 			const topStyle = Object.assign({}, barStyle);
 			topStyle.top = `${percentage}%`;
 			setBarStyle(topStyle);
@@ -172,7 +182,7 @@ export const ScrollManager = ({scrollItems, className, children}) => {
 	}
 
 	return (
-		<div ref={scrollRef} onScroll={onRootScroll} className={classNames(className, "flex flex-1 w-full flex-col items-center overflow-y-auto relative overflow-x-hidden")}>
+		<div ref={scrollRef} onScroll={onRootScroll} className={classNames(className, "scroll-ref flex flex-1 w-full flex-col items-center overflow-y-auto relative overflow-x-hidden")}>
 			{scrollItems?.length && (<FloatingList scrollItems={scrollItems} scroll={scroll} scrollHeight={scrollHeight} clientHeight={clientHeight}></FloatingList>)}
 			<span className={"opacity-0 w-0 h-0 pointer-events-none"} ref={topRef}>{showTop}</span>
 			{showTop && (
@@ -186,3 +196,4 @@ export const ScrollManager = ({scrollItems, className, children}) => {
 		</div>
 	)
 }
+
