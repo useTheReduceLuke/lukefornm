@@ -68,7 +68,8 @@ const FloatingListScrollBar = (props) => {
 
 	const makeBarTopStyle = () => {
 		const calcPercent = (scroll / (scrollHeight) * 100).toFixed(3) ?? 0;
-		if (!isNaN(percentage) && calcPercent !== percentage) {
+
+		if (!isNaN(calcPercent) && (calcPercent !== percentage)) {
 			setPercentage(calcPercent);
 			const topStyle = Object.assign({}, barStyle);
 			topStyle.top = `${percentage}%`;
