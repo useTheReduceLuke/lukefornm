@@ -7,12 +7,13 @@ import {About} from "./pages/About";
 import {District} from "./pages/District";
 import {Issues} from "./pages/Issues";
 import {Contact} from "./pages/Contact";
+import {TestApp} from "./pages/TestApp";
 
 const router = createHashRouter([
 	{
 		path: "/",
 		element: <Root />,
-		errorElement: <div className={"flex flex-col w-full h-full items-center justify-center gap-3"}>Page Not Found<NavLink className={"text-blue-600"} to={"/"}>Go Back Home</NavLink></div>,
+		errorElement: <div className={""}>Page Not Found<NavLink className={"text-blue-600"} to={"/"}>Go Back Home</NavLink></div>,
 			children: [
 				{
 					path: "",
@@ -33,6 +34,10 @@ const router = createHashRouter([
 				{
 					path: "contact",
 					element: <Contact />,
+				},
+				{
+					path: "test",
+					element: <TestApp />,
 				},
 			],
 		},

@@ -26,6 +26,7 @@ export const Header = () => {
 		{ url: '/issues', text: 'Issues' },
 		{ url: '/district', text: 'NM District 60' },
 		{ url: '/contact', text: 'Contact' },
+		{ url: '/test', text: 'Test' },
 	]
 
 	useEffect(() => {
@@ -49,10 +50,10 @@ export const Header = () => {
 				{/*	Events*/}
 				{/*</a>*/}
 			</div>
-			<div className={"flex items-center justify-between flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
+			<div className={"flex flex-1 items-center justify-evenly lg:justify-center flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
 				<Donate/>
 				<span className={"flex"}>
-					<img className={"p-0 transition-all object-contain h-8 lg:h-12"}
+					<img className={"p-0 transition-all object-contain h-8 sm:h-10 lg:h-12"}
 				     src={"/FinalLogo.png"}/>
 				</span>
 				<span className={"flex"}>

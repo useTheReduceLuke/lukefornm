@@ -84,8 +84,10 @@ export const Root = () => {
 	return (
 		<>
 			<Header/>
-			<main className={"flex flex-1 flex-col items-center overflow-y-auto overflow-hidden relative"}>
-				<Outlet/>
+			<main className={"h-full w-full flex flex-1 flex-col items-center overflow-auto relative"}>
+				<div id={"scroll"}>
+					<Outlet/>
+				</div>
 			</main>
 			<Support/>
 		</>
