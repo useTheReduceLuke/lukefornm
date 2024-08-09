@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Welcome to Luke For NM's Repository
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+The intent of this project is to create a visually distinct and attractive Campaign Website, with the end goal being
+it customizeable enough to allow others to use the design with minor tweaks.
 
 ## Available Scripts
 

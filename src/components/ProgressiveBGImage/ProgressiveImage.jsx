@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./ProgressiveImage.css";
 import cn from "classnames";
 
-const ProgressiveImg = ({ placeholderSrc, src, className, children, ...props }) => {
+const ProgressiveImg = ({ placeholderSrc, src, className, children, id = 'progressive-image', ...props }) => {
 	const [imgSrc, setImgSrc] = useState(placeholderSrc || src);
 
 	useEffect(() => {
@@ -17,7 +17,7 @@ const ProgressiveImg = ({ placeholderSrc, src, className, children, ...props }) 
 		placeholderSrc && imgSrc === placeholderSrc ? "loading" : "loaded";
 
 	return (
-		<div className={cn("relative", className)}>
+		<div id={id} className={cn(className)}>
 			<img
 				{...{ src: imgSrc, ...props }}
 				alt={props.alt || ""}
