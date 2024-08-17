@@ -45,10 +45,6 @@ export const Header = () => {
 						</NavLink>
 					})
 				}
-				<a href={"https://secure.actblue.com/donate/lukekickoff"} target="_blank"
-				   className={"relative flex z-20 transition-colors text-black/50 hover:text-black font-bold sm:font-normal text-sm sm:text-xl px-2"}>
-					Events
-				</a>
 			</div>
 			<div
 				className={"flex flex-1 items-center justify-evenly lg:justify-center flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
