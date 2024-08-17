@@ -1,6 +1,9 @@
-
-import './App.css';
-import {createHashRouter, NavLink, RouterProvider} from "react-router-dom";
+import "./App.css";
+import {
+	createHashRouter,
+	NavLink,
+	RouterProvider,
+} from "react-router-dom";
 import {Home} from "./pages/Home";
 import {Root} from "./pages/Root";
 import {About} from "./pages/About";
@@ -11,38 +14,42 @@ import {Contact} from "./pages/Contact";
 const router = createHashRouter([
 	{
 		path: "/",
-		element: <Root />,
-		errorElement: <div className={"flex flex-col w-full h-full items-center justify-center gap-3"}>Page Not Found<NavLink className={"text-blue-600"} to={"/"}>Go Back Home</NavLink></div>,
-			children: [
-				{
-					path: "",
-					element: <Home />,
-				},
-				{
-					path: "about",
-					element: <About />,
-				},
-				{
-					path: "issues",
-					element: <Issues />,
-				},
-				{
-					path: "district",
-					element: <District />,
-				},
-				{
-					path: "contact",
-					element: <Contact />,
-				},
-			],
-		},
-	]
-);
+		element: <Root/>,
+		errorElement: (
+			<div className={""}>
+				Page Not Found
+				<NavLink className={"text-blue-600"} to={"/"}>
+					Go Back Home
+				</NavLink>
+			</div>
+		),
+		children: [
+			{
+				path: "",
+				element: <Home/>,
+			},
+			{
+				path: "about",
+				element: <About/>,
+			},
+			{
+				path: "issues",
+				element: <Issues/>,
+			},
+			{
+				path: "district",
+				element: <District/>,
+			},
+			{
+				path: "contact",
+				element: <Contact/>,
+			},
+		],
+	},
+]);
 
 function App() {
-  return (
-	  <RouterProvider router={router} />
-  );
+	return <RouterProvider router={router}/>;
 }
 
 export default App;

@@ -4,13 +4,13 @@ import cn from "classnames";
 import Instagram from "@mui/icons-material/Instagram"
 import Facebook from "@mui/icons-material/Facebook"
 
-const Donate = ({className: inClass}) => {
+export const Donate = ({className: inClass}) => {
 
 	return (
 		<a
-		   href="https://secure.actblue.com/donate/luke-for-nm"
-		   target="_blank"
-		   className={cn("text-white bg-[#00a9e0] w-max flex text-xl gap-1 items-center px-4 py-0 lg:py-1 rounded transition hover:scale-105", inClass)}>
+			href="https://secure.actblue.com/donate/luke-for-nm"
+			target="_blank"
+			className={cn("text-white bg-[#00a9e0] w-max flex text-xl gap-1 items-center px-4 py-0 lg:py-1 rounded transition hover:scale-105", inClass)}>
 			Donate
 			<img style={{width: "46px", objectFit: "contain"}} src="AB.png" alt={"AB"}/>
 		</a>
@@ -21,11 +21,11 @@ export const Header = () => {
 	const location = useLocation();
 
 	const routes = [
-		{ url: '/', text: 'Home' },
-		{ url: '/about', text: 'About' },
-		{ url: '/issues', text: 'Issues' },
-		{ url: '/district', text: 'NM District 60' },
-		{ url: '/contact', text: 'Contact' },
+		{url: '/', text: 'Home'},
+		{url: '/about', text: 'About'},
+		{url: '/issues', text: 'Issues'},
+		{url: '/district', text: 'NM District 60'},
+		{url: '/contact', text: 'Contact'}
 	]
 
 	useEffect(() => {
@@ -33,7 +33,7 @@ export const Header = () => {
 
 	return (
 		<div
-			className={cn("z-[100] h-[112px] lg:h-[96px] flex flex-col-reverse lg:flex-row w-full gap-3 justify-evenly px-2 md:px-4 py-1 md:py-2 text-xl items-center overflow-hidden border-b")}>
+			className={cn("fixed top-0 bg-white z-[100] h-[112px] lg:h-[96px] flex flex-col-reverse lg:flex-row w-full gap-0 lg:gap-8 justify-evenly px-2 md:px-4 py-1 md:py-2 text-xl items-center overflow-hidden border-b")}>
 			<div className={"flex w-full lg:gap-4 flex-row justify-evenly items-center flex-1"}>
 				{
 					routes.map(route => {
@@ -45,15 +45,13 @@ export const Header = () => {
 						</NavLink>
 					})
 				}
-				{/*<a href={"https://secure.actblue.com/donate/lukekickoff"} target="_blank" className={"relative flex z-20 transition-colors text-black/50 hover:text-black font-bold sm:font-normal text-sm sm:text-xl px-2"}>*/}
-				{/*	Events*/}
-				{/*</a>*/}
 			</div>
-			<div className={"flex items-center justify-between flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
+			<div
+				className={"flex flex-1 items-center justify-evenly lg:justify-center flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
 				<Donate/>
 				<span className={"flex"}>
-					<img className={"p-0 transition-all object-contain h-8 lg:h-12"}
-				     src={"/FinalLogo.png"}/>
+					<img className={"p-0 transition-all object-contain h-8 sm:h-10 lg:h-12"}
+					     src={"/FinalLogo.png"}/>
 				</span>
 				<span className={"flex"}>
 					<span className={"Instagram-Icon relative"}>

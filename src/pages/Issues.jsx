@@ -1,4 +1,3 @@
-
 import {DoubleBackground} from "../components/DoubleBackground";
 import Solar from "../assets/solar-md.jpg";
 import SolarSm from "../assets/solar-sm.jpg";
@@ -8,6 +7,8 @@ import School from "../assets/school-md.jpg";
 import SchoolSm from "../assets/school-sm.jpg";
 import Rust from "../assets/rust-md.jpg";
 import RustSm from "../assets/rust-sm.jpg";
+import ElVado from "../assets/el-vado-md.jpg";
+import ElVadoSm from "../assets/el-vado-sm.jpg";
 import Foodtruck from "../assets/foodtruck-md.jpg";
 import FoodtruckSm from "../assets/foodtruck-sm.jpg";
 import Workers from "../assets/workers-md.jpg";
@@ -16,6 +17,7 @@ import OldTown from "../assets/oldtown-md.jpg";
 import OldTownSm from "../assets/oldtown-sm.jpg";
 import {BlockText} from "../components/BlockText";
 import {ScrollManager} from "../components/ScrollManager";
+import {FloatingList} from "../components/FloatingBar";
 
 const issuesText = [
 	{
@@ -24,9 +26,9 @@ const issuesText = [
 		imageSrc: OldTown,
 		imageSrcSm: OldTownSm,
 		text: [
-			"Countrywide, abortion rights are under attack, and thankfully New Mexico has laws in place to protect those rights.",
-			"However, we must also enshrine the right for a pregnant person to choose permanently in the State's Constitution.",
- 			"We also must safeguard the anonymity of anyone traveling to New Mexico to get an abortion or anything else our state protects.",
+			"Countrywide, the Right to Choose is under attack, and thankfully New Mexico has laws in place to protect that right.",
+			"However, we must also enshrine that right permanently in the State's Constitution.",
+			"We also must safeguard the anonymity of anyone traveling to New Mexico to get an abortion or anything else our state protects.",
 		],
 	},
 	{
@@ -41,7 +43,31 @@ const issuesText = [
 		],
 	},
 	{
-		header: "Renewable Energy and the Environment",
+		header: "Public Safety",
+		key: "safety",
+		imageSrc: Rust,
+		imageSrcSm: RustSm,
+		text: [
+			"I am deeply committed to public welfare. I believe that a strong society is built on the well-being of its citizens.",
+			"Crime has been steadily decreasing since the pandemic, but the flood of opioids and other drugs into our society is straining our prisons, hospitals, and people.",
+			"We will work to address the epidemic of overdoses and addiction through preventative measures, including getting drugs off the streets and treatment for our addicted.",
+			"Constructing more centers for treatment is essential, especially for our youth and other at-risk groups.",
+			"Providing housing for all New Mexicans and implementing societal measures such as public safety can lower crime and make the jobs of our police easier."
+		],
+	},
+	{
+		header: "Voting Rights",
+		key: "voting",
+		imageSrc: Rust,
+		imageSrcSm: RustSm,
+		text: [
+			"Voting is an inalienable right guaranteed by our constitution.",
+			"As such, I will work to protect voting for all New Mexicans, especially our Native American population.",
+			"I will work to open primaries to independents, expand mail-in voting, and also propose Ranked-Choice voting, so every vote truly matters.",
+		],
+	},
+	{
+		header: "Our Environment",
 		key: "environment",
 		imageSrc: Solar,
 		imageSrcSm: SolarSm,
@@ -56,7 +82,7 @@ const issuesText = [
 		],
 	},
 	{
-		header: "Smart Growth for Neighborhoods",
+		header: "Neighborhoods",
 		key: "neighborhoods",
 		imageSrc: Foodtruck,
 		imageSrcSm: FoodtruckSm,
@@ -92,6 +118,18 @@ const issuesText = [
 		],
 	},
 	{
+		label: "Small Business",
+		key: "business",
+		header: "Small Business",
+		imageSrc: ElVado,
+		imageSrcSm: ElVadoSm,
+		text: [
+			"Small businesses like food trucks, local restaurants, shops, boutiques, and more are a major part of what makes New Mexico, New Mexico.",
+			"I want to support our small businesses as much as possible, and I’d like to propose a forgivable loan with the purpose of supplementing wages and the record-high rent our local small businesses face.",
+			"I also want to increase the number of mixed-use zones - particularly in food and shopping deserts - to allow small, local businesses to be placed closer to where people live."
+		],
+	},
+	{
 		label: "Workforce",
 		key: "workforce",
 		header: "New Mexican Workforce",
@@ -101,8 +139,7 @@ const issuesText = [
 			"New Mexico should join the front of recognizing the worth of our hard-working citizens.",
 			"New Mexico's median salary is just under $25/hour, which means half our citizens make less than that.",
 			"Our minimum wage should be increased to make it possible for any New Mexican to live here.",
-			"Our tipped wage should be eliminated, with it up to restaurants to decide how to handle tipping at the individual restaurant.",
-			"Small, local businesses can be provided a forgivable loan that is distinctly to cover a portion of wages, promoting wage growth.",
+			"All workers should be provided guaranteed Paid Family and Medical Leave, and additional vacation time on top of that.",
 			"Unions should be given further protections for their current or prospective members from any threats or coercion."
 		],
 	},
@@ -113,7 +150,9 @@ const ListWithDepth = ({textToIterate}) =>
 		<span className={"list-disc inline-block list-outside flex-col gap-2"} role="list">
 			{
 				textToIterate?.map((textOrArr, ind) =>
-					(typeof textOrArr === "string" ? <p key={`text-${ind}`} className={"text-sm md:text-xl py-2"}>{textOrArr}</p> : <ListWithDepth textToIterate={textOrArr}/>)
+					(typeof textOrArr === "string" ?
+						<p key={`text-${ind}`} className={"text-sm md:text-xl py-2"}>{textOrArr}</p> :
+						<ListWithDepth textToIterate={textOrArr}/>)
 				)
 			}
 		</span>
@@ -123,14 +162,15 @@ const ListWithDepth = ({textToIterate}) =>
 export const Issues = () => {
 
 	return (
-		<ScrollManager scrollItems={issuesText}>
+		<>
+			{issuesText?.length && (<FloatingList scrollItems={issuesText}></FloatingList>)}
 			{
 				issuesText.map((issue, ind) => {
 						return (<Issue issue={issue} ind={ind} key={issue.key}/>)
 					}
 				)
 			}
-		</ScrollManager>
+		</>
 	)
 }
 
@@ -138,7 +178,7 @@ const Issue = ({issue, ind}) => {
 	const {header, text, imageSrc, imageSrcSm, key} = issue;
 	return (<div id={key}>
 		<div id={`scroll-${ind}`}></div>
-		<DoubleBackground ind={ind} imageSrc={imageSrc} imageSrcSm={imageSrcSm} upperBg={"from-black/70 to-black/90"}>
+		<DoubleBackground ind={ind} imageSrc={imageSrc} imageSrcSm={imageSrcSm} upperBg={"from-black/80 to-black/95"}>
 			<BlockText>
 				<span
 					className={"inline-flex max-w-[600px] ml-[6.5rem] md:ml-36 flex-col justify-center items-center py-8 min-h-[100vh]"}>
