@@ -133,7 +133,7 @@ const issuesText = [
         text:     [
             "Our veterans deserve the best treatment we can offer, and we should further increase funding for the VA.",
             "We must ensure that our veterans are given healthcare that includes mental health, vision, dental, and more.",
-            "Disability support should match the Veteran's disability rating (there is a ballot measure for this, please vote Nov 5!).",
+            "Disability support for property taxes should match the Veteran's disability rating, and be increased (there are ballot measures for this, please vote Nov 5!).",
         ],
     },
     {
