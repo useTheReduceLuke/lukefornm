@@ -43,7 +43,7 @@ const issuesText = [
             "Acquiring and retaining good teachers is essential. To do that, we must be competitive with other states in wages and working conditions.",
             "My wife is a teacher at Rio Rancho High School and I am aware of the challenges she, her fellow teachers and her students face.",
             "I'd like to increase teachers' salaries and index their salaries to inflation, in an effort to further bring teachers here.",
-            "Students learn best in smaller class sizes, we should aim for 20 students per classroom",
+            "Students learn best in smaller class sizes, we should aim for 20 students per classroom.",
             "Rio Rancho has an incredible school system, and I'd like to provide more state funding for electives such as cooking, arts, woodworking, programming, and more.",
         ],
     },

@@ -1,5 +1,5 @@
 import MailChimp from "../components/MailChimp";
-import Abq1Md from "../assets/abq-1-md.jpg";
+import Birb from "../assets/BirbBG.png";
 import {BlockText} from "../components/BlockText";
 
 const ContactUs = () => {
@@ -20,8 +20,8 @@ const ContactUs = () => {
 export const Contact = () => {
 	return (
 		<div className={"flex flex-1 flex-col items-start w-full h-full"}>
-			<img className={"w-full h-full fixed"} src={Abq1Md} alt={"Albuquerque"}/>
-			<div className={"inline-flex text-white flex-col justify-center items-center p-8 h-full w-full"}>
+			<img className={"w-full h-full object-cover fixed"} src={Birb} alt={"Birb"}/>
+			<div className={"inline-flex text-white flex-col justify-end items-center p-8 h-full w-full"}>
 				<BlockText className={"mt-8 md:mt-24 pb-2 text-3xl font-bold"}>Contact Us:</BlockText>
 				<ContactUs/>
 				<BlockText className={"mt-8 md:mt-24 pb-2 text-3xl font-bold"}>Stay updated:</BlockText>

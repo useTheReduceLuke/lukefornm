@@ -55,6 +55,11 @@ const endorsementList = [
 		className={"w-40 lg:w-60 bg-white"}
 		src={"/images/EqualityNMEndorsement.png"}
 		alt="Sierra Club Endorsement"
+	/>,
+	<img
+		className={"w-40 lg:w-60 bg-white"}
+		src={"/images/OLEendorsement.png"}
+		alt="Ole NM Endorsement"
 	/>
 ]
 

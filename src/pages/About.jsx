@@ -3,7 +3,6 @@ import {motion, useInView, useScroll, useTransform} from "framer-motion";
 
 import AbqBack from "../assets/Abq-Float-Back.jpg";
 import AbqFront from "../assets/Abq-Float-Front.png";
-import AbqCenter from "../assets/Abq-Float-Center.png";
 import Arie from "../assets/Arie.jpg";
 import LukeDany from "../assets/LukeDany.jpg";
 import LukeGraduation from "../assets/LukeGraduation.jpg";
@@ -20,14 +19,10 @@ export function useParallax(value, distance) {
 const Background = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll();
-	const opacity = useTransform(scrollYProgress, (v) => '' + (1-v));
-	const opacity2 = useTransform(scrollYProgress, (v) => '' + (1-v/2));
-    const y1 = useParallax(scrollYProgress, -10);
-    const y2 = useParallax(scrollYProgress, -20);
+    const y1 = useParallax(scrollYProgress, -30);
     const y3 = useParallax(scrollYProgress, -100);
     const imgList = [
         { img: AbqBack, style: {y: y1, top: "20px"} },
-        { img: AbqCenter, style: { y: y2, top: "-20px" } },
         { img: AbqFront, style: { y: y3, top: "-100px" } },
     ];
 
