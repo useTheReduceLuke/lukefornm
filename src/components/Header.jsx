@@ -6,11 +6,13 @@ import Facebook from "@mui/icons-material/Facebook"
 
 export const Donate = ({className: inClass}) => {
 
+	return null;
+
 	return (
 		<a
 			href="https://secure.actblue.com/donate/luke-for-nm"
 			target="_blank"
-			className={cn("text-white bg-[#00a9e0] w-max flex text-xl gap-1 items-center px-4 py-0 lg:py-1 rounded transition hover:scale-105", inClass)}>
+			className={cn("text-white bg-[#00a9e0] w-max flex text-xl gap-1 items-center px-4 py-0 lg:py-1 rounded transition hover:scale-105", inClass)} rel="noreferrer">
 			Donate
 			<img style={{width: "46px", objectFit: "contain"}} src="AB.png" alt={"AB"}/>
 		</a>
@@ -23,9 +25,9 @@ export const Header = () => {
 	const routes = [
 		{url: '/', text: 'Home'},
 		{url: '/about', text: 'About'},
-		{url: '/issues', text: 'Issues'},
+		{url: '/issues', text: 'Priorities'},
 		{url: '/district', text: 'NM District 60'},
-		{url: '/contact', text: 'Contact'}
+		{url: '/contact', text: 'Volunteer'}
 	]
 
 	useEffect(() => {
@@ -50,21 +52,13 @@ export const Header = () => {
 				className={"flex flex-1 items-center justify-evenly lg:justify-center flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
 				<Donate/>
 				<span className={"flex"}>
-					<img className={"p-0 transition-all object-contain h-8 sm:h-10 lg:h-12"}
-					     src={"/FinalLogo.png"}/>
-				</span>
-				<span className={"flex"}>
 					<span className={"Instagram-Icon relative"}>
 						<span className={"absolute w-full h-full left-0 top-0 z-10 rounded-full"}></span>
 						<a href={"https://www.instagram.com/luke_for_nm/"} target="_blank"
-						   className={"relative flex z-10 transition-all text-black/70 cursor-pointer p-2 w-max rounded-full"}>
+						   className={"relative flex z-10 transition-all text-black/70 cursor-pointer p-2 w-max rounded-full"} rel="noreferrer">
 							<Instagram/>
 						</a>
 					</span>
-					<a href={"https://www.facebook.com/profile.php?id=100095797740167"} target="_blank"
-					   className={"relative flex z-10 transition-all text-black/70 cursor-pointer p-2 w-max rounded-full hover:bg-blue-500 hover:text-white"}>
-						<Facebook/>
-					</a>
 				</span>
 			</div>
 		</div>

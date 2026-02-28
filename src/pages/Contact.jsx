@@ -21,13 +21,11 @@ export const Contact = () => {
 	return (
 		<div className={"flex flex-1 flex-col items-start w-full h-full"}>
 			<img className={"w-full h-full object-cover fixed"} src={Birb} alt={"Birb"}/>
-			<div className={"inline-flex text-white flex-col justify-end items-center p-8 h-full w-full"}>
-				<BlockText className={"mt-8 md:mt-24 pb-2 text-3xl font-bold"}>Contact Us:</BlockText>
+			<div className={"inline-flex text-white flex-col justify-start items-center p-8 mt-48 h-full w-full"}>
 				<ContactUs/>
-				<BlockText className={"mt-8 md:mt-24 pb-2 text-3xl font-bold"}>Stay updated:</BlockText>
-				<div className={"bg-white/70 backdrop-blur-sm p-4 rounded text-xl text-black flex flex-col gap-4"}>
-					<MailChimp/>
-				</div>
+				{/*<div className={"bg-white/70 backdrop-blur-sm p-4 rounded text-xl text-black flex flex-col gap-4"}>*/}
+				{/*	<MailChimp/>*/}
+				{/*</div>*/}
 			</div>
 		</div>
 	)

@@ -7,7 +7,7 @@ import {Close} from "@mui/icons-material";
 
 export const Footer = () => (
     <div className={"h-max w-full bg-gray-400 px-4 text-[8px] font-sans"}>
-		LukeForNM.com was produced In-House.
+		LukeForNM.com was produced In-House. Site History: <a target="_blank" href="https://github.com/useTheReduceLuke/lukefornm" rel="noreferrer">github.com/useTheReduceLuke/lukefornm</a>
     </div>
 );
 
@@ -67,7 +67,7 @@ export const Root = () => {
             <span id={"scrollRef"} className={"h-0 w-full"}/>
             <Header/>
             <Outlet/>
-             <Information/>
+             {/*<Information/>*/}
         </>
     );
 };

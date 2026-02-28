@@ -15,37 +15,40 @@ import * as React from "react";
 
 const issuesText = [
     {
+        header:   "Healthcare",
+        key:      "healthcare",
+        imageSrc: Rust,
+        text:     [
+            "New Mexico has led the charge in many pro-people policies including Free College, Universal Childcare, and I will work to make New Mexico the first State to have Universal Healthcare.",
+            "New Mexico should own every hospital in the state, cutting out the massive cost and waste of insurance, ensuring remote hospitals will never lose funding, and to guarantee our hospitals are provided every tool they need to treat New Mexicans.",
+            "We will make healthcare free for all New Mexicans and cover dental, vision, gender-affirming, mental and behavioral, and especially emergency care.",
+            "We must also attract and retain medical students, doctors, nurses, assistants, EMTS, and other healthcare professionals through staffing minimums, overtime protections, and wage increases across the board.",
+            "Medical malpractice caps should be lowered and medicare reimbursement rates increased to make our state more competitive.",
+        ],
+    },
+    {
         header:   "Affordable Housing",
         key:      "housing",
         imageSrc: Apartments,
         text:     (
             <ul className={"text-sm md:text-lg font-light flex flex-col gap-1"}>
-                <li>New Mexicans, especially those renting, are spending record amounts of their paychecks on housing.
+                <li>New Mexicans, especially those renting, are spending record amounts of their paychecks on housing, with the overwhelming majority spending 30% or more on housing.
                 </li>
+                <li>While New Mexico faces an affordable housing shortage, the state
+                    implement <a className={"text-blue-400 underline"}
+                                  href={"https://www.strongtowns.org/journal/2018/12/12/what-does-incrementalism"}
+                                  target="_blank" rel="noreferrer"> incremental
+                    housing</a> and the state should fund the construction of more affordable housing.</li>
                 <li>I will propose a scaling tax that applies to the land and property of out-of-state
                     land/property-owners.
                 </li>
-                <li>The change in rent a landlord can impose on a rental (not the tenant) yearly should be capped to
+                <li>The change in rent a landlord can impose on a rental (not just the tenant) yearly should be capped to
                     match inflation.
                 </li>
-                <li>Short-term home rentals such as AirBnB should be limited in density throughout the state.</li>
-                <li>While we are in a housing shortage, we should consider <a className={"text-blue-400 underline"}
-                    href={"https://www.strongtowns.org/journal/2018/12/12/what-does-incrementalism"}
-                    target="_blank" rel="noreferrer">incremental housing</a> in areas lacking affordable housing.</li>
+                <li>Short-term home rentals such as AirBnB should be banned.</li>
+                <li>Our densest cities should be required to  in areas lacking affordable housing.</li>
             </ul>
         ),
-    },
-    {
-        header:   "Education",
-        key:      "education",
-        imageSrc: School,
-        text:     [
-            "Acquiring and retaining good teachers is essential. To do that, we must be competitive with other states in wages and working conditions.",
-            "My wife is a teacher at Rio Rancho High School and I am aware of the challenges she, her fellow teachers and her students face.",
-            "I'd like to increase teachers' salaries and index their salaries to inflation, in an effort to further bring teachers here.",
-            "Students learn best in smaller class sizes, we should aim for 20 students per classroom.",
-            "Rio Rancho has an incredible school system, and I'd like to provide more state funding for electives such as cooking, arts, woodworking, programming, and more.",
-        ],
     },
     {
         header:   "Environment",
@@ -62,14 +65,13 @@ const issuesText = [
         ],
     },
     {
-        header:   "Healthcare",
-        key:      "healthcare",
-        imageSrc: Rust,
+        header:   "Voting Rights",
+        key:      "voting",
+        imageSrc: Voting,
         text:     [
-            "If even one New Mexican is putting off a necessary surgery or appointment or going into bankruptcy because of cost, that's too many.",
-            "We will make healthcare affordable or even free for all New Mexicans and cover dental, vision, and most importantly mental health.",
-            "We must also attract and retain medical students, doctors, nurses, assistants, EMTS, and other healthcare professionals through staffing minimums, overtime protections, and wage increases across the board.",
-            "As well, medical malpractice caps should be lowered and medicare reimbursement rates increased to make our state more competitive.",
+            "Voting is an inalienable right guaranteed by our constitution.",
+            "As such, I will work to protect voting for all New Mexicans, especially our Native American population.",
+            "I will work to expand mail-in voting, eliminate off-season elections that have incredibly low turnout, and also propose Ranked-Choice voting, so every vote truly matters.",
         ],
     },
     {
@@ -80,6 +82,18 @@ const issuesText = [
             "New Mexico should expand its non-discrimination laws to state family leave policies and also to adoption laws, to ensure as few children are left without a home as possible.",
             "Our state curricular standards should join Colorado, Washington, and more and explicitly require LGBTQ inclusion.",
             "Private health insurance must be forbidden from discriminating and our state policies (including Medicaid) should be inclusive to LGBTQIA+ people and peoples of any gender or nationality.",
+        ],
+    },
+    {
+        header:   "Education",
+        key:      "education",
+        imageSrc: School,
+        text:     [
+            "Acquiring and retaining good teachers is essential. To do that, we must be competitive with other states in wages and working conditions.",
+            "My wife is a teacher at Rio Rancho High School and I am aware of the challenges she, her fellow teachers and her students face.",
+            "I'd like to increase teachers' salaries and index their salaries to inflation, in an effort to further bring teachers here.",
+            "Students learn best in smaller class sizes, we should aim for 20 students per classroom.",
+            "Rio Rancho has an incredible school system, and I'd like to provide more state funding for electives such as cooking, arts, woodworking, programming, and more.",
         ],
     },
     {
@@ -134,16 +148,6 @@ const issuesText = [
             "Our veterans deserve the best treatment we can offer, and we should further increase funding for the VA.",
             "We must ensure that our veterans are given healthcare that includes mental health, vision, dental, and more.",
             "Disability support for property taxes should match the Veteran's disability rating, and be increased (there are ballot measures for this, please vote Nov 5!).",
-        ],
-    },
-    {
-        header:   "Voting Rights",
-        key:      "voting",
-        imageSrc: Voting,
-        text:     [
-            "Voting is an inalienable right guaranteed by our constitution.",
-            "As such, I will work to protect voting for all New Mexicans, especially our Native American population.",
-            "I will work to open primaries to independents, expand mail-in voting, and also propose Ranked-Choice voting, so every vote truly matters.",
         ],
     },
     {
@@ -202,7 +206,7 @@ const Issue = ({ issue, ind }: { issue: IssueType, ind: number }) => {
             <div id={`scroll-${ ind }`}></div>
             <div
                 className={"bg-gradient-to-b from-black/80 to-black/95 text-white flex flex-col justify-center items-start pl-[7rem] md:pl-40 pr-2  py-8 min-h-[100vh] w-full z-10"}>
-                <p className={"text-3xl md:text-5xl"}>{header}</p>
+                <p className={"text-3xl md:text-5xl"}>{ind <= 2 && <b className={ind === 0 ? "text-4xl" : ""}>{ind + 1}.</b>} {header}</p>
                 <ListWithDepth textToIterate={text}/>
             </div>
         </div>
