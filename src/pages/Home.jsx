@@ -18,7 +18,7 @@ export const Home = () => {
             >
                 <div
                     className={
-                        "text-black text-xl md:text-3xl p-4 lg:pl-8 pb-16 pt-8 lg:py-24 flex-1 z-10 lg:min-w-[600px] justify-center"
+                        "text-black text-xl md:text-3xl p-4 lg:pl-8 pb-16 pt-8 lg:py-24 flex-1 z-10 lg:min-w-[600px] max-w-[720px] justify-center"
                     }
                 >
                     <div className="text-5xl"> Luke Jungmann</div>
@@ -37,7 +37,7 @@ export const Home = () => {
                 <div className="text-4xl">Luke's Priorities:</div>
                 <ul
                     className={
-                        "flex flex-col justify-start gap-8 lg:gap-24 list-disc ml-8 mr-4 pt-8 text-2xl"
+                        "flex flex-col max-w-[800px] justify-start gap-8 lg:gap-24 list-disc ml-8 mr-4 pt-8 text-2xl"
                     }
                 >
                     <li>Making New Mexico the first state in the country to

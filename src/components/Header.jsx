@@ -52,6 +52,10 @@ export const Header = () => {
 				className={"flex flex-1 items-center justify-evenly lg:justify-center flex-row w-full lg:w-max gap-1 lg:gap-8 flex-shrink "}>
 				<Donate/>
 				<span className={"flex"}>
+					<img className={"p-0 transition-all object-contain h-8 sm:h-10 lg:h-12"}
+						 src={"/FinalLogo.png"}/>
+				</span>
+				<span className={"flex"}>
 					<span className={"Instagram-Icon relative"}>
 						<span className={"absolute w-full h-full left-0 top-0 z-10 rounded-full"}></span>
 						<a href={"https://www.instagram.com/luke_for_nm/"} target="_blank"
@@ -60,6 +64,10 @@ export const Header = () => {
 						</a>
 					</span>
 				</span>
+				<a className="rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 px-4 md:px-6 py-2 md:py-3 font-bold text-base md:text-xl"
+				   href="https://www.electronicpetitions.elections.sos.nm.gov/luke-jungmann"
+				   target="_blank"
+				   rel="noreferrer">Sign Luke's Ballot</a>
 			</div>
 		</div>
 	)

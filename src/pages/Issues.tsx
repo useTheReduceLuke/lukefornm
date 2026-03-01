@@ -23,7 +23,7 @@ const issuesText = [
             "New Mexico should own every hospital in the state, cutting out the massive cost and waste of insurance, ensuring remote hospitals will never lose funding, and to guarantee our hospitals are provided every tool they need to treat New Mexicans.",
             "We will make healthcare free for all New Mexicans and cover dental, vision, gender-affirming, mental and behavioral, and especially emergency care.",
             "We must also attract and retain medical students, doctors, nurses, assistants, EMTS, and other healthcare professionals through staffing minimums, overtime protections, and wage increases across the board.",
-            "Medical malpractice caps should be lowered and medicare reimbursement rates increased to make our state more competitive.",
+            "Medical malpractice caps should be lowered and - at a miniminum - medicare reimbursement rates increased to make our state more competitive.",
         ],
     },
     {
