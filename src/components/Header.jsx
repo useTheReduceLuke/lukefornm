@@ -6,8 +6,6 @@ import Facebook from "@mui/icons-material/Facebook"
 
 export const Donate = ({className: inClass}) => {
 
-	return null;
-
 	return (
 		<a
 			href="https://secure.actblue.com/donate/luke-for-nm"
@@ -64,10 +62,6 @@ export const Header = () => {
 						</a>
 					</span>
 				</span>
-				<a className="rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 px-4 md:px-6 py-2 md:py-3 font-bold text-base md:text-xl"
-				   href="https://www.electronicpetitions.elections.sos.nm.gov/luke-jungmann"
-				   target="_blank"
-				   rel="noreferrer">Sign Luke's Petition</a>
 			</div>
 		</div>
 	)

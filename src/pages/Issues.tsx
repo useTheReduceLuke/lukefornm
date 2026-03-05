@@ -147,7 +147,6 @@ const issuesText = [
         text:     [
             "Our veterans deserve the best treatment we can offer, and we should further increase funding for the VA.",
             "We must ensure that our veterans are given healthcare that includes mental health, vision, dental, and more.",
-            "Disability support for property taxes should match the Veteran's disability rating, and be increased (there are ballot measures for this, please vote Nov 5!).",
         ],
     },
     {
@@ -167,7 +166,7 @@ const issuesText = [
 
 const ListWithDepth = ({ textToIterate }: { textToIterate: React.ReactNode }) =>
     (
-        <span className={"max-w-[600px] list-disc inline-block list-outside flex-col gap-2"} role="list">
+        <span className={"max-w-[600px] list-disc inline-block list-outside flex-col gap-2 min-h-max"} role="list">
             {
                 (Array.isArray(textToIterate)) ?
                     textToIterate?.map((textOrArr, ind) =>
@@ -205,8 +204,8 @@ const Issue = ({ issue, ind }: { issue: IssueType, ind: number }) => {
         <div style={{backgroundImage: `url(${imageSrc})`}} className={"relative w-full h-[100vh] bg-cover bg-fixed bg-center bg-no-repeat"}>
             <div id={`scroll-${ ind }`}></div>
             <div
-                className={"bg-gradient-to-b from-black/80 to-black/95 text-white flex flex-col justify-center items-start pl-[7rem] md:pl-40 pr-2  py-8 min-h-[100vh] w-full z-10"}>
-                <p className={"text-3xl md:text-5xl"}>{ind <= 2 && <b className={ind === 0 ? "text-4xl" : ""}>{ind + 1}.</b>} {header}</p>
+                className={"bg-gradient-to-b from-black/80 to-black/95 text-white flex flex-col justify-center items-start pl-[7rem] md:pl-40 pr-2  py-8 min-h-max h-[100vh] w-full z-10"}>
+                <p className={"pt-[96px] text-3xl md:text-5xl"}>{ind <= 2 && <b className={ind === 0 ? "text-4xl" : ""}>{ind + 1}.</b>} {header}</p>
                 <ListWithDepth textToIterate={text}/>
             </div>
         </div>

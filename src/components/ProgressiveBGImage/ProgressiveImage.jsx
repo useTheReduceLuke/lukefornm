@@ -18,13 +18,11 @@ const ProgressiveImg = ({ placeholderSrc, src, className, children, ...props }) 
 
 	return (
 		<div className={cn("relative", className)}>
-			<div>
-				<img
-					{...{ src: imgSrc, ...props }}
-					alt={props.alt || ""}
-					className={cn("flex -z-10 rounded-full overflow-hidden", children && "fixed", customClass)}
-				/>
-			</div>
+			<img
+				{...{ src: imgSrc, ...props }}
+				alt={props.alt || ""}
+				className={cn("flex -z-10 w-full", children && "fixed", customClass)}
+			/>
 			{ children }
 		</div>
 	);
