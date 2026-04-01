@@ -21,7 +21,7 @@ const ProgressiveImg = ({ placeholderSrc, src, className, children, ...props }) 
 			<img
 				{...{ src: imgSrc, ...props }}
 				alt={props.alt || ""}
-				className={cn("flex -z-10 w-full", children && "fixed", customClass)}
+				className={cn("flex -z-10 w-full h-full object-cover", children && "fixed", customClass)}
 			/>
 			{ children }
 		</div>

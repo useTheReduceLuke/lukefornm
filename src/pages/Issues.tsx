@@ -205,7 +205,7 @@ const Issue = ({ issue, ind }: { issue: IssueType, ind: number }) => {
             <div id={`scroll-${ ind }`}></div>
             <div
                 className={"bg-gradient-to-b from-black/80 to-black/95 text-white flex flex-col justify-center items-start pl-[7rem] md:pl-40 pr-2  py-8 min-h-max h-[100vh] w-full z-10"}>
-                <p className={"pt-[96px] text-3xl md:text-5xl"}>{ind <= 2 && <b className={ind === 0 ? "text-4xl" : ""}>{ind + 1}.</b>} {header}</p>
+                <p className={"pt-[96px] text-3xl md:text-5xl"}>{ind <= 2 && <b className={ind === 0 ? "text-4xl md:text-6xl" : ""}>{ind + 1}.</b>} {header}</p>
                 <ListWithDepth textToIterate={text}/>
             </div>
         </div>
