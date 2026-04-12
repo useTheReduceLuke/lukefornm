@@ -54,7 +54,7 @@ export const Header = () => {
 						 src={"/FinalLogo.png"}/>
 				</span>
 				<span className={"flex"}>
-					<span className={"Instagram-Icon relative"}>
+					<span className={"Instagram-Icon transition-all relative"}>
 						<span className={"absolute w-full h-full left-0 top-0 z-10 rounded-full"}></span>
 						<a href={"https://www.instagram.com/luke_for_nm/"} target="_blank"
 						   className={"relative flex z-10 transition-all text-black/70 cursor-pointer p-2 w-max rounded-full"} rel="noreferrer">

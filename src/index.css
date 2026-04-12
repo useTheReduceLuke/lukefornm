@@ -39,15 +39,22 @@ body, html, #root {
 .leaflet-container { height: 180px; }
 
 .Instagram-Icon span {
-	transition: 0.2s ease;
-	background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+	transition: 0.15s ease;
+	background: #c13584;
 	opacity: 0;
 }
 
-.Instagram-Icon:hover span {
-	opacity: 1;
+.Instagram-Icon {
+	border-radius: 50%;
+	overflow: hidden;
+	background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
-.Instagram-Icon:hover a {
+
+.Instagram-Icon:hover span {
+	background: #421065;
+	opacity: 0.8;
+}
+.Instagram-Icon a {
 	color: white;
 }
 

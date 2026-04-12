@@ -20,10 +20,12 @@ const issuesText = [
         imageSrc: Rust,
         text:     [
             "New Mexico has led the charge in many pro-people policies including Free College, Universal Childcare, and I will work to make New Mexico the first State to have Universal Healthcare.",
-            "New Mexico should own every hospital in the state, cutting out the massive cost and waste of insurance, ensuring remote hospitals will never lose funding, and to guarantee our hospitals are provided every tool they need to treat New Mexicans.",
-            "We will make healthcare free for all New Mexicans and cover dental, vision, gender-affirming, mental and behavioral, and especially emergency care.",
+            "No New Mexican should face medical debt or bankruptcy, have to decide between receiving essential care or paying rent, or have anyone make medical decisions except them and their Doctor.",
+            "We will make healthcare free for all New Mexicans and cover dental, vision, gender-affirming, mental and behavioral, and emergency care.",
             "We must also attract and retain medical students, doctors, nurses, assistants, EMTS, and other healthcare professionals through staffing minimums, overtime protections, and wage increases across the board.",
-            "Medical malpractice caps should be lowered and - at a miniminum - medicare reimbursement rates increased to make our state more competitive.",
+            "New Mexico should aim to own every hospital in the state, ensuring remote hospitals will never lose funding, and to guarantee our hospitals are provided every tool they need to treat New Mexicans.",
+            "This can be done progressively, beginning with Hospitals at risk of facing closure, then hospitals repeatedly failing patient and employee scoring, then all other hospitals.",
+            "As a quick win, New Mexico's medicare reimbursement rates should be increased to make our state more competitive.",
         ],
     },
     {
@@ -34,19 +36,18 @@ const issuesText = [
             <ul className={"text-sm md:text-lg font-light flex flex-col gap-1"}>
                 <li>New Mexicans, especially those renting, are spending record amounts of their paychecks on housing, with the overwhelming majority spending 30% or more on housing.
                 </li>
-                <li>While New Mexico faces an affordable housing shortage, the state
+                <li>While New Mexico faces an affordable housing shortage, the state should
                     implement <a className={"text-blue-400 underline"}
                                   href={"https://www.strongtowns.org/journal/2018/12/12/what-does-incrementalism"}
                                   target="_blank" rel="noreferrer"> incremental
-                    housing</a> and the state should fund the construction of more affordable housing.</li>
+                    housing</a> and the state should fund the construction of public and affordable housing.</li>
                 <li>I will propose a scaling tax that applies to the land and property of out-of-state
                     land/property-owners.
                 </li>
                 <li>The change in rent a landlord can impose on a rental (not just the tenant) yearly should be capped to
                     match inflation.
                 </li>
-                <li>Short-term home rentals such as AirBnB should be banned.</li>
-                <li>Our densest cities should be required to  in areas lacking affordable housing.</li>
+                <li>Short-term home rentals such as AirBnB should be banned, particularly for out-of-state corporations buying up considerable property.</li>
             </ul>
         ),
     },
@@ -113,9 +114,9 @@ const issuesText = [
         imageSrc: Law,
         text:     [
             "Crime has been steadily decreasing since the pandemic, but poverty and the flood of opioids and other drugs into our society is straining our prisons, hospitals, and people.",
-            "We will work to address the epidemic of overdoses and addiction through preventative measures, including getting drugs off the streets and treatment for our addicted.",
+            "We will work to address the epidemic of overdoses and addiction through preventative measures, including getting drugs off the streets and treatment for those facing addiction.",
             "Constructing more centers for treatment is essential, especially for our youth and other at-risk groups.",
-            "Providing housing for all New Mexicans and implementing societal measures such as public safety can lower crime and make the jobs of our police easier.",
+            "Providing housing for all New Mexicans and implementing societal measures such as public safety can lower crime and leave real policing to the police.",
         ],
     },
     {
@@ -125,7 +126,7 @@ const issuesText = [
         text:     [
             "Countrywide, the Right to Choose is under attack, and thankfully New Mexico has laws in place to protect that right.",
             "However, we must also enshrine that right permanently in our State's Constitution.",
-            "We also must safeguard the anonymity of anyone traveling to New Mexico to get an abortion or anything else our state protects.",
+            "We also must safeguard the anonymity of anyone traveling to New Mexico to get an abortion or any other right our state protects.",
         ],
     },
     {
@@ -138,6 +139,7 @@ const issuesText = [
             "I want to support our small businesses as much as possible, and I’d like to propose a forgivable loan with the purpose of supplementing wages and the record-high rent our local small businesses face.",
             "I also want to increase the number of mixed-use zones - particularly in food and shopping deserts - to allow small, local businesses to be placed closer to where people live.",
             "Passing FMLA (the paid Family & Medical Leave Act) will make small businesses more competitive in terms of benefits, and I will fight to reduce the burden on local small business as much as possible.",
+            "Passing Universal Healthcare will help relieve the significant burden on small business of paying for healthcare for employees."
         ],
     },
     {
@@ -158,6 +160,8 @@ const issuesText = [
             "New Mexico should join the front of recognizing the worth of our hard-working citizens.",
             "New Mexico's median salary is just under $25/hour, which means half our citizens make less than that.",
             "Our minimum wage should be increased to make it possible for any New Mexican to live here.",
+            "As many small towns have much lower costs of living, I believe a ranged minimum wage would be most effective, scaling with cost of living (COL) and inflation.",
+            "New Mexico's minimum wage should be a range from $18/hour in our low COL areas to $25 in our high COL areas including Santa Fe.",
             "All workers should be provided guaranteed Paid Family and Medical Leave, and additional vacation time on top of that.",
             "Unions should be given further protections for their current or prospective members from any threats or coercion.",
         ],
@@ -166,7 +170,7 @@ const issuesText = [
 
 const ListWithDepth = ({ textToIterate }: { textToIterate: React.ReactNode }) =>
     (
-        <span className={"max-w-[600px] list-disc inline-block list-outside flex-col gap-2 min-h-max"} role="list">
+        <span className={"max-w-[800px] list-disc inline-block list-outside flex-col gap-2 min-h-max"} role="list">
             {
                 (Array.isArray(textToIterate)) ?
                     textToIterate?.map((textOrArr, ind) =>
@@ -204,7 +208,7 @@ const Issue = ({ issue, ind }: { issue: IssueType, ind: number }) => {
         <div style={{backgroundImage: `url(${imageSrc})`}} className={"relative w-full h-[100vh] bg-cover bg-fixed bg-center bg-no-repeat"}>
             <div id={`scroll-${ ind }`}></div>
             <div
-                className={"bg-gradient-to-b from-black/80 to-black/95 text-white flex flex-col justify-center items-start pl-[7rem] md:pl-40 pr-2  py-8 min-h-max h-[100vh] w-full z-10"}>
+                className={"bg-gradient-to-b from-black/80 to-black/95 text-white flex flex-col justify-center items-start pl-[7rem] md:pl-40 pr-2 py-8 h-max min-h-[100vh] w-full z-10"}>
                 <p className={"pt-[96px] text-3xl md:text-5xl"}>{ind <= 2 && <b className={ind === 0 ? "text-4xl md:text-6xl" : ""}>{ind + 1}.</b>} {header}</p>
                 <ListWithDepth textToIterate={text}/>
             </div>

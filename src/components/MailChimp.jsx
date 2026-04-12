@@ -4,6 +4,16 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 const validEmail = (email) =>
 	email?.indexOf("@") > -1;
 
+export const phoneNumberAutoFormat = (phoneNumber) => {
+	const number = phoneNumber.trim().replace(/[^0-9]/g, "");
+
+	if (number.length < 4) return number;
+	if (number.length < 7) return number.replace(/(\d{3})(\d{1})/, "$1-$2");
+	if (number.length < 11) return number.replace(/(\d{3})(\d{3})(\d{1})/, "$1-$2-$3");
+	return number.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+};
+
+
 // a basic form
 const CustomForm = ({ status, message, onValidated, backAction }) => {
 
@@ -27,7 +37,7 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 			KNOCK: knock,
 			DRIVE: drive,
 			BANK: bank,
-			WRITING: writing,
+			WRITING: writing
 		});
 	}
 
@@ -48,7 +58,9 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 
 	const updatePhoneNumber = (event) => {
 		const phoneNumber = event.target.value;
-		setPhoneNumber(phoneNumber);
+		const formattedNumber = phoneNumberAutoFormat(phoneNumber);
+		console.log(formattedNumber)
+		setPhoneNumber(formattedNumber);
 	}
 
 	const updateKnock = (event) => {
@@ -68,6 +80,11 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 	const updateWriting = (event) => {
 		const writing = event.target.checked;
 		setWriting(writing ? 1 : 0);
+	}
+
+	const updateCanUsePhoneNumber = (event) => {
+		const canUsePhoneNumber = event.target.checked;
+		setCanUsePhoneNumber(canUsePhoneNumber);
 	}
 
 	return (
@@ -115,19 +132,21 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 				name="phoneNumber"
 				id="phoneNumber"
 				type="tel"
+				value={phoneNumber}
 				disabled={status === "sending"}
 				placeholder="Phone Number"
 			/>
-			<div className={"flex w-max"}>
-				<input name="knock"
-					   id="knock"
+			{phoneNumber && (<div className={"flex w-full"}>
+				<input name="canUsePhoneNumber"
+					   id="canUsePhoneNumber"
 					   type="checkbox"
-					   className={"mr-2 "}
+					   className={"mr-2"}
 					   disabled={status === "sending"}
-					   onChange={updateKnock}
+					   onChange={updateCanUsePhoneNumber}
 				/>
-				<label htmlFor="knock">Door Knocking</label>
-			</div>
+				<label className="text-xs" htmlFor="canUsePhoneNumber">Confirm you'd like to receive text messages about
+					volunteering events</label>
+			</div>)}
 			<p className="mt-4">How would you like to volunteer?</p>
 			<div className={"flex flex-col gap-2 w-max items-start"}>
 				<div className={"flex w-max"}>
@@ -173,7 +192,7 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 			</div>
 			<div className={"w-full flex justify-end items-center gap-3 pt-4"}>
 				{status === "success" && (
-					<div className={"text-sm"}>Successfully registered, thank you for volunteering!</div>
+					<div className={"text-sm"}>Successfully registered, thank you for signing up to volunteer!</div>
 				)}
 				{status === "error" && (
 					<div
