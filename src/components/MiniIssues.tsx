@@ -74,7 +74,7 @@ const issuesText = [
         text: (
             <NavLink
                 className={
-                    "border-b-2 pb-2 border-b-white/50 hover:border-b-blue-400 transition-colors max-w-max text-2xl text-white/80 hover:text-blue-400"
+                    "border-b-2 pb-2 border-b-white/50 hover:border-b-blue-400 transition-colors max-w-max text-2xl text-black/90 hover:text-blue-400"
                 }
                 to={"/issues"}
             >
@@ -85,7 +85,7 @@ const issuesText = [
 
 const ListWithDepth = ({ textToIterate }: { textToIterate: React.ReactNode }) =>
     (
-        <span className={"max-w-[600px] list-disc inline-block list-outside flex-col gap-2 min-h-max"} role="list">
+        <span className={"max-w-[600px] list-disc inline-block list-outside flex-col text-center gap-2 min-h-max"} role="list">
             {
                 (Array.isArray(textToIterate)) ?
                     textToIterate?.map((textOrArr, ind) =>
@@ -122,7 +122,7 @@ const Issue = ({ issue, ind }: { issue: IssueType, ind: number }) => {
         <div style={{backgroundImage: `url(${imageSrc})`}} className={"relative w-full h-[50vh] bg-cover bg-fixed bg-center bg-no-repeat"}>
             <div id={`scroll-${ ind }`}></div>
             <div
-                className={"bg-gradient-to-b from-black/80 to-black/95 text-white flex flex-col justify-center items-center px-8  py-8 min-h-max h-[50vh] w-full z-10"}>
+                className={"bg-gradient-to-b from-sky-50/95 to-sky-50/75 text-black/80 flex flex-col justify-center items-center px-8  py-8 min-h-max h-[50vh] w-full z-10"}>
                 <p className={"text-3xl md:text-5xl"}>{ind <= 2 && <b className={ind === 0 ? "text-4xl md:text-6xl" : ""}>{ind + 1}.</b>} {header}</p>
                 <ListWithDepth textToIterate={text}/>
             </div>

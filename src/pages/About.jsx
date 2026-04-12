@@ -220,7 +220,7 @@ export function About() {
                 <div
                     className={"flex flex-col md:flex-row gap-5 text-center items-center z-100 h-max w-max relative justify-center bg-white m-8 px-8 py-2 rounded"}>
                     <span>
-					Every donation helps us fight for <b>New Mexican workers and unions, healthcare, abortion rights, and more.</b>
+					Every donation helps us fight for <b>New Mexican Universal Healthcare, Affordable Housing, Protecting our Environment, and more.</b>
                     </span>
                     <Donate/>
                 </div>

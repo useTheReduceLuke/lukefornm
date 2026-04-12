@@ -10,13 +10,24 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 	const [email, setEmail] = useState('');
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLName] = useState('');
+	const [phoneNumber, setPhoneNumber] = useState('');
+	const [canUsePhoneNumber, setCanUsePhoneNumber] = useState(false);
+	const [knock, setKnock] = useState(0);
+	const [drive, setDrive] = useState(0);
+	const [bank, setBank] = useState(0);
+	const [writing, setWriting] = useState(0);
 
 	const submit = () => {
 		return validEmail(email) &&
 		onValidated({
 			EMAIL: email,
 			FNAME: firstName,
-			LNAME: lastName
+			LNAME: lastName,
+			PHONE: canUsePhoneNumber ? phoneNumber : '',
+			KNOCK: knock,
+			DRIVE: drive,
+			BANK: bank,
+			WRITING: writing,
 		});
 	}
 
@@ -35,12 +46,36 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 		setLName(lastName);
 	}
 
+	const updatePhoneNumber = (event) => {
+		const phoneNumber = event.target.value;
+		setPhoneNumber(phoneNumber);
+	}
+
+	const updateKnock = (event) => {
+		const knock = event.target.checked;
+		setKnock(knock ? 1 : 0);
+	}
+
+	const updateDrive = (event) => {
+		const drive = event.target.checked;
+		setDrive(drive ? 1 : 0);
+	}
+
+	const updateBank = (event) => {
+		const bank = event.target.checked;
+		setBank(bank ? 1 : 0);
+	}
+	const updateWriting = (event) => {
+		const writing = event.target.checked;
+		setWriting(writing ? 1 : 0);
+	}
+
 	return (
 		<div
-			className={"flex flex-col gap-2 max-w-[720px] text-black [text-shadow:_none]"}
+			className={"flex flex-col items-center gap-2 max-w-[720px] text-black [text-shadow:_none]"}
 		>
 			<p className={"text-xl"}>Get information on future volunteer opportunities!</p>
-			<span className={"flex flex-col md:flex-row gap-4"}>
+			<div className={"flex flex-col md:flex-row gap-4"}>
 				<input
 					className={"text-black border-b border-black/50 hover:border-black/80 px-2 py-1 text-sm md:text-xl flex-1 disabled:bg-gray-300"}
 					onChange={updateFirstName}
@@ -49,7 +84,8 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 					autoComplete="given-name"
 					type="text"
 					disabled={status === "sending"}
-					placeholder="John"
+					required
+					placeholder="First*"
 				/>
 				<input
 					className={"text-black border-b border-black/50 hover:border-black/80  px-2 py-1 text-sm md:text-xl flex-1 disabled:bg-gray-300"}
@@ -59,9 +95,10 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 					autoComplete="family-name"
 					type="text"
 					disabled={status === "sending"}
-					placeholder="Doe"
+					required
+					placeholder="Last*"
 				/>
-			</span>
+			</div>
 			<input
 				className={"text-black border-b border-black/50 hover:border-black/80  px-2 py-1 text-sm md:text-xl w-full disabled:bg-gray-300"}
 				onChange={updateEmail}
@@ -69,18 +106,81 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 				id="email"
 				type="email"
 				disabled={status === "sending"}
-				placeholder="john.doe@email.com"
+				required
+				placeholder="Email*"
 			/>
-			{status === "success" && (
-				<div className={"text-sm"}>Email registered!</div>
-			)}
-			{status === "error" && (
-				<div
-					className={"text-sm"}>
-					{message}
+			<input
+				className={"text-black border-b border-black/50 hover:border-black/80  px-2 py-1 text-sm md:text-xl w-full disabled:bg-gray-300"}
+				onChange={updatePhoneNumber}
+				name="phoneNumber"
+				id="phoneNumber"
+				type="tel"
+				disabled={status === "sending"}
+				placeholder="Phone Number"
+			/>
+			<div className={"flex w-max"}>
+				<input name="knock"
+					   id="knock"
+					   type="checkbox"
+					   className={"mr-2 "}
+					   disabled={status === "sending"}
+					   onChange={updateKnock}
+				/>
+				<label htmlFor="knock">Door Knocking</label>
+			</div>
+			<p className="mt-4">How would you like to volunteer?</p>
+			<div className={"flex flex-col gap-2 w-max items-start"}>
+				<div className={"flex w-max"}>
+					<input name="knock"
+						   id="knock"
+						   type="checkbox"
+						   className={"mr-2 "}
+						   disabled={status === "sending"}
+						   onChange={updateKnock}
+					/>
+					<label htmlFor="knock">Door Knocking</label>
 				</div>
-			)}
-			<div className={"w-full flex justify-between pt-4"}>
+				<div className={"flex w-max"}>
+					<input name="drive"
+						   id="drive"
+						   type="checkbox"
+						   className={"mr-2"}
+						   disabled={status === "sending"}
+						   onChange={updateDrive}
+					/>
+					<label htmlFor="drive">Driving Door Knockers</label>
+				</div>
+				<div className={"flex w-max"}>
+					<input name="bank"
+						   id="bank"
+						   type="checkbox"
+						   className={"mr-2 "}
+						   disabled={status === "sending"}
+						   onChange={updateBank}
+					/>
+					<label htmlFor="bank">Phone Banking</label>
+				</div>
+				<div className={"flex w-max"}>
+					<input name="writing"
+						   id="writing"
+						   type="checkbox"
+						   className={"mr-2 "}
+						   disabled={status === "sending"}
+						   onChange={updateWriting}
+					/>
+					<label htmlFor="writing">Letter Writing</label>
+				</div>
+			</div>
+			<div className={"w-full flex justify-end items-center gap-3 pt-4"}>
+				{status === "success" && (
+					<div className={"text-sm"}>Successfully registered, thank you for volunteering!</div>
+				)}
+				{status === "error" && (
+					<div
+						className={"text-sm"}>
+						{message}
+					</div>
+				)}
 				{backAction ? (<button
 					className={"text-black text-lg px-4 shadow-none hover:shadow-md transition-all py-1 rounded disabled:text-gray-500 disabled:border-gray-400"}
 					onClick={backAction}>
@@ -98,7 +198,7 @@ const CustomForm = ({ status, message, onValidated, backAction }) => {
 
 const MailChimp = ({backAction}) => {
 
-	const url = "https://lukefornm.us8.list-manage.com/subscribe/post?u=967d30d5b44583db32c477f5f&amp;id=811ecd4b95&amp;f_id=00cd74e0f0";
+	const url = "https://lukefornm.us8.list-manage.com/subscribe/post?u=967d30d5b44583db32c477f5f&amp;id=811ecd4b95&amp;f_id=00f430e3f0";
 
 	return(
 		<MailchimpSubscribe

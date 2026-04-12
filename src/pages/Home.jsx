@@ -50,10 +50,10 @@ export const Home = () => {
             </ProgressiveImage>
             <div
                 className={
-                    "relative min-h-max flex flex-col items-center pt-32 pb-16 align-bottom w-full bg-blue-50"
+                    "relative min-h-max flex flex-col items-center pt-8 md:pt-32 pb-16 align-bottom w-full bg-blue-50"
                 }
             >
-                <div className="text-5xl md:text-6xl">Luke's Priorities:</div>
+                <div className="text-5xl md:text-6xl text-center">What we're fighting for:</div>
             </div>
             <MiniIssues/>
             <Footer/>
