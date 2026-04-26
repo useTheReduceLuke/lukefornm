@@ -1,18 +1,10 @@
 import {useState} from "react";
 import {Popup} from "../pages/Root";
 import ImageGallery from "react-image-gallery";
+import MayFundraiser from "../assets/MayFundraiser.png";
+import LukeVolunteer from "../assets/LukeVolunteer.png";
 
-const images = [
-	{
-		original: "images/VeteransYes.jpg"
-	},
-	{
-		original: "images/yesCA1.jpg"
-	},
-	{
-		original: "images/yesCA2.jpg"
-	},
-];
+const images = [{ original: LukeVolunteer }, { original: MayFundraiser }];
 
 export const Information = () => {
     const [ show, setShow ] = useState(true);
@@ -25,28 +17,12 @@ export const Information = () => {
 				    src={"/FinalLogo.png"}
 			    />
 			    <h3 className={"text-3xl w-full flex flex-col md:flex-row items-center justify-center border-b uppercase p-2"}>
-				    <p className={"text-blue-800"}>Voting</p>
+				    <p className={"text-blue-800"}>Event</p>
 				    <p className={"text-orange-600 pl-2"}>Information</p>
 			    </h3>
 			    <ul className={"list-disc w-full items-center py-2 px-4 gap-2"}>
-				    <p className={"text-2xl"}>Vote Today!</p>
-				    <li>
-					    Early voting is available from <b>Oct. 8th</b> until Election Day, <b>Nov. 5th</b> at your
-					    <a className={"text-blue-800 underline pl-1"} target={"_blank"}
-					       href={"https://www.sos.nm.gov/voting-and-elections/voter-information-portal-nmvote-org/county-clerk-information/"}
-					       rel="noreferrer">
-						    County Clerk's Office
-					    </a>.
-				    </li>
-				    <li className={"w-full"}>
-					    Beginning <b>Oct. 19</b>, voting locations and times will be expanded.
-				    </li>
-				    <li className={"w-full"}>
-					    <b>Same-day registration and voting</b> is available now until Nov. 2nd and on Election Day, <b>Nov.
-					    5th</b>!
-				    </li>
 			    </ul>
-			    <div className={"border-2 max-w-[360px] md:w-[480px] mx-2"}>
+			    <div className={"border-2 max-w-full max-h-full mx-2"}>
 				    <ImageGallery items={images}/>
 			    </div>
 		    </div>

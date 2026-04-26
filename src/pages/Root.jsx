@@ -23,29 +23,29 @@ export const Popup = ({ children, inShow }) => {
     if (!show) return;
 
     return (
-        <div
+      <div
+        className={
+          "fixed z-[1000] w-full h-[calc(100vh-112px)] md:h-[calc(100vh-96px)] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+        }
+        onClick={toggleShow}
+      >
+        <span
+          className={
+            "bg-white relative w-[600px] max-w-full max-h-full py-4 px-2 md:px-6 flex flex-col items-center pointer-events-auto"
+          }
+          onClick={(event) => event.stopPropagation()}
+        >
+          <button
             className={
-                "fixed z-[1000] w-full h-full flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+              "absolute z-10 right-2 top-2 p-2 rounded-full hover:bg-black/10 border-black/50 transition-all"
             }
             onClick={toggleShow}
-        >
-            <span
-                className={
-                    "bg-white relative w-[600px] max-w-full max-h-full py-4 px-2 md:px-6 flex flex-col items-center pointer-events-auto"
-                }
-                onClick={(event) => event.stopPropagation()}
-            >
-                <button
-                    className={
-                        "absolute z-10 right-2 top-2 p-2 rounded-full hover:bg-black/10 border-black/50 transition-all"
-                    }
-                    onClick={toggleShow}
-                >
-                    <Close className={"pointer-events-none"}/>
-                </button>
-                {children}
-            </span>
-        </div>
+          >
+            <Close className={"pointer-events-none"} />
+          </button>
+          {children}
+        </span>
+      </div>
     );
 };
 

@@ -164,6 +164,7 @@ const issuesText = [
             "New Mexico's minimum wage should be a range from $18/hour in our low COL areas to $25 in our high COL areas including Santa Fe.",
             "All workers should be provided guaranteed Paid Family and Medical Leave, and additional vacation time on top of that.",
             "Unions should be given further protections for their current or prospective members from any threats or coercion.",
+            'New Mexico should change to "For Cause" Employment Law, which will protect hard-working New Mexicans from unreasonably losing their jobs.'
         ],
     },
 ];
